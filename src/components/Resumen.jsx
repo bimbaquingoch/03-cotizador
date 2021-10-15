@@ -13,6 +13,7 @@ const CotResumen = styled.div`
     font-family: "Slabo 27px", serif;
     letter-spacing: 2px;
     margin-bottom: 10px;
+    text-align: center;
   }
   > ul {
     padding: 20px;

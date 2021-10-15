@@ -107,15 +107,16 @@ const FormContainer = styled.form`
 `;
 
 const Cotizarbtn = styled.button`
-  padding: 20px 60px;
-  outline: none;
   background-color: var(--react-text-color);
   border: none;
   border-radius: 5px;
   box-shadow: 0 9px var(--gradient-back);
-  text-align: center;
+  color: #fff;
   cursor: pointer;
   font-size: 24px;
+  outline: none;
+  padding: 20px 60px;
+  text-align: center;
   transition: 150ms all ease;
 
   &:hover {

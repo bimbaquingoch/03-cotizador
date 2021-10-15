@@ -12,16 +12,21 @@ const Contenedor = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
   padding: 10px;
+  @media screen and (min-width: 420px) {
+    height: 100vh;
+  }
 `;
 
 const Row = styled.div`
-  border: 1px solid black;
   border-radius: 30px;
   box-shadow: 3px 5px 15px 1px black;
+  margin-top: 20px;
+  margin-bottom: 20px;
   width: 100%;
   @media screen and (min-width: 420px) {
+    margin-top: 0;
     width: 80%;
   }
 
@@ -36,11 +41,38 @@ const ContenedorForm = styled.div`
   padding: 3rem;
 `;
 
+const BtnLimpiar = styled.button`
+  background-color: var(--react-text-color);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 9px var(--gradient-back);
+  color: #fff;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+  outline: none;
+  padding: 20px 60px;
+  text-align: center;
+  transition: 150ms all ease;
+  width: 100%;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    box-shadow: 0 5px #95a5a6;
+    transform: translateY(4px);
+  }
+`;
+
 const App = () => {
-  const [resumen, setResumen] = useState({
+  const initialState = {
     cotizacion: 0,
     datos: { marca: "", year: "", plan: "" },
-  });
+  };
+  const [resumen, setResumen] = useState(initialState);
   const { cotizacion, datos } = resumen;
   return (
     <Contenedor>
@@ -50,7 +82,18 @@ const App = () => {
         <ContenedorForm>
           <Formulario setResumen={setResumen} />
           <Resumen datos={datos} />
-          {cotizacion !== 0 && <Total cotizacion={cotizacion} />}
+          {cotizacion !== 0 && (
+            <>
+              <Total cotizacion={cotizacion} />
+              <BtnLimpiar
+                onClick={() => {
+                  setResumen(initialState);
+                }}
+              >
+                Limpiar
+              </BtnLimpiar>
+            </>
+          )}
         </ContenedorForm>
       </Row>
     </Contenedor>
