@@ -1,0 +1,84 @@
+:root {
+  --background-body: #f0f3f0;
+  --react-text-color: #61dafb;
+  --blue-dark: #18293c;
+  --numeros-letras-primario: #111521;
+  --background-glass-40: rgba(255, 255, 255, 0.5);
+  --background-glass-80: rgba(255, 255, 255, 0.8);
+  --background-glass-25: rgba(255, 255, 255, 0.5);
+  --gradient-back: linear-gradient(to right, #904e95, #e96443);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #e96443; /* fallback for old browsers */
+  /* background: -webkit-linear-gradient( */
+  /*   to right, */
+  /*   #904e95, */
+  /*   #e96443 */
+  /* ); /1* Chrome 10-25, Safari 5.1-6 *1/ */
+  background: var(--gradient-back);
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding: none;
+  margin: none;
+}
+span.resultado {
+  position: relative;
+  width: 100%;
+}
+.resultado-enter {
+  transition: 0.5s;
+}
+.resultado-enter.resultado-enter-active {
+  transform: translateY(0%);
+}
+.resultado-exit {
+  transform: translateY(0);
+  transition: 0.5s;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.resultado-exit-active {
+  opacity: 0;
+  transform: translateY(-10%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --numeros-letras-primario: #f9f9f9;
+    --background-body: #282c34;
+    --background-select: #18293c;
+    --background-glass-40: rgba(0, 0, 0, 0.6);
+    --background-glass-80: rgba(0, 0, 0, 0.8);
+    --background-glass-25: rgba(0, 0, 0, 0.6);
+  }
+}
+
+/* @media (prefers-reduced-motion: no-preference) { */
+/*   .App-logo { */
+/*     animation: App-logo-spin infinite 20s linear; */
+/*   } */
+/* } */
+
+/* @keyframes App-logo-spin { */
+/*   from { */
+/*     transform: rotate(0deg); */
+/*   } */
+/*   to { */
+/*     transform: rotate(360deg); */
+/*   } */
+/* } */
